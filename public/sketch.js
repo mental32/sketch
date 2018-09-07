@@ -8,7 +8,7 @@ function setup() {
   socket = io.connect('http://localhost:3000');
 
   // anonymous callback for socket event 'mouse'
-  socket.on('mouse', function(data) {
+  socket.on('mouse', (data) => {
     fill(0,0,255);
     noStroke();
     ellipse(data.x, data.y, 20, 20);
