@@ -1,4 +1,5 @@
 var socket;
+var _y_offset = 10;
 
 function setup() {
   createCanvas(displayWidth, displayHeight);
@@ -13,6 +14,14 @@ function setup() {
     noStroke();
     ellipse(data.x, data.y, 20, 20);
   });
+
+  socket.on('join', (data) => {
+    fill(255);
+    textSize(10);
+    text(data, 10, _y_offset);
+    _y_offset += 10;
+  })
+
 }
 
 function draw() {

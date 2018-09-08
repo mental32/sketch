@@ -15,4 +15,6 @@ io.sockets.on('connection', (socket) => {
 	socket.on('mouse', function(data) {
 		socket.broadcast.emit('mouse', data);
 	});
+
+	socket.broadcast.emit('join', socket.id);
 })
